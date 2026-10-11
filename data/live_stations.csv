@@ -1,0 +1,3 @@
+uid,aqi,time.tz,time.stime,time.vtime,station.name,station.geo,station.url,station.country
+11847,-,+05:30,2026-06-23 10:00:00,1782189000,"SIDCO Kurichi, Coimbatore, India","[10.942451, 76.978996]",india/coimbatore/sidco-kurichi,IN
+14124,-,+05:30,2026-06-20 07:00:00,1781919000,"PSG College of Arts and Science, Coimbatore, India","[11.0328, 77.0349]",india/coimbatore/psg-college-of-arts-and-science,IN
