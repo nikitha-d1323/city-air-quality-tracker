@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_4385cf6d197d3d46996c6fae0ac29fee {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+<div style="position:fixed;bottom:30px;left:30px;z-index:9999;background:white;
+padding:10px;border:1px solid grey;font-size:13px;">
+<b>AQI</b><br>
+<span style="color:#2c7bb6">&#9679;</span> 0-50 Good<br>
+<span style="color:#ffd92f">&#9679;</span> 51-100 Moderate<br>
+<span style="color:#fc8d59">&#9679;</span> 101-150 Unhealthy (sensitive)<br>
+<span style="color:#d7191c">&#9679;</span> 151-200 Unhealthy<br>
+<span style="color:#7b3294">&#9679;</span> 201-300 Very unhealthy<br>
+<span style="color:#999999">&#9679;</span> No data</div>
+    
+            <div class="folium-map" id="map_4385cf6d197d3d46996c6fae0ac29fee" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_4385cf6d197d3d46996c6fae0ac29fee = L.map(
+                "map_4385cf6d197d3d46996c6fae0ac29fee",
+                {
+                    center: [11.0168, 76.9558],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 11,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_67261830bc1b9a2234fc2a0e3ae9b1c1 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_67261830bc1b9a2234fc2a0e3ae9b1c1.addTo(map_4385cf6d197d3d46996c6fae0ac29fee);
+        
+    
+            var circle_marker_7d451b6e2e93438ac8156b529d1da6fa = L.circleMarker(
+                [10.942451, 76.978996],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#999999", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 14, "stroke": true, "weight": 1}
+            ).addTo(map_4385cf6d197d3d46996c6fae0ac29fee);
+        
+    
+        var popup_92dfa418cdebcd1cc7d43ed0bff2410e = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_2435e7088c8f2a20a68d4731d63ba765 = $(`<div id="html_2435e7088c8f2a20a68d4731d63ba765" style="width: 100.0%; height: 100.0%;"><b>SIDCO Kurichi, Coimbatore, India</b><br>AQI: n/a</div>`)[0];
+                popup_92dfa418cdebcd1cc7d43ed0bff2410e.setContent(html_2435e7088c8f2a20a68d4731d63ba765);
+            
+        
+
+        circle_marker_7d451b6e2e93438ac8156b529d1da6fa.bindPopup(popup_92dfa418cdebcd1cc7d43ed0bff2410e)
+        ;
+
+        
+    
+    
+            circle_marker_7d451b6e2e93438ac8156b529d1da6fa.bindTooltip(
+                `<div>
+                     SIDCO Kurichi, Coimbatore, India: n/a
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_430b8f8b423bc43f7a184f624a7c388e = L.circleMarker(
+                [11.0328, 77.0349],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#999999", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 14, "stroke": true, "weight": 1}
+            ).addTo(map_4385cf6d197d3d46996c6fae0ac29fee);
+        
+    
+        var popup_8662fd086a4cd273b2806df6e435c373 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_860bb44e7ed477bbd1ec4555594ae0e5 = $(`<div id="html_860bb44e7ed477bbd1ec4555594ae0e5" style="width: 100.0%; height: 100.0%;"><b>PSG College of Arts and Science, Coimbatore, India</b><br>AQI: n/a</div>`)[0];
+                popup_8662fd086a4cd273b2806df6e435c373.setContent(html_860bb44e7ed477bbd1ec4555594ae0e5);
+            
+        
+
+        circle_marker_430b8f8b423bc43f7a184f624a7c388e.bindPopup(popup_8662fd086a4cd273b2806df6e435c373)
+        ;
+
+        
+    
+    
+            circle_marker_430b8f8b423bc43f7a184f624a7c388e.bindTooltip(
+                `<div>
+                     PSG College of Arts and Science, Coimbatore, India: n/a
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+</script>
+</html>
