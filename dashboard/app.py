@@ -62,6 +62,7 @@ cmp_fig = px.bar(cmp_df, x="city", y="us_aqi", color="us_aqi", color_continuous_
 # ---------- App ----------
 app = Dash(__name__)
 app.title = "Coimbatore Air Quality Tracker"
+server = app.server
 
 app.layout = html.Div(style={"fontFamily": "Arial", "background": "#f4f6f8", "padding": 16}, children=[
     html.H2("Coimbatore Air Quality Tracker"),
